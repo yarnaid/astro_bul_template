@@ -1,15 +1,11 @@
-% -*- root: dissertation.tex -*-
-%%% Макет страницы %%%
-\geometry{a4paper,top=2cm,bottom=2cm,left=2.5cm,right=1cm}
-\allsectionsfont{\centering}
-\titlespacing*{\chapter}{}{3\baselineskip}{3\baselineskip}
+% -*- root: 0-text.tex -*-
 
 %%% Кодировки и шрифты %%%
 \renewcommand{\rmdefault}{ftm} % Включаем Times New Roman
 % \renewcommand{\baselinestretch}{1.5}
-\usepackage[onehalfspacing]{setspace}% 1,5 интервал
-\usepackage[12pt]{extsizes}
-\setlength{\headheight}{15pt}
+% \usepackage[onehalfspacing]{setspace}% 1,5 интервал
+% \usepackage[12pt]{extsizes}
+% \setlength{\headheight}{15pt}
 
 
  \acsetup{
@@ -26,24 +22,12 @@
 %\pagecolor[rgb]{0.5,0.5,0.5}
 %\color[rgb]{1,1,1}
 
-\sisetup
-  {
-    math-rm=\mathtt,
-    text-rm=\ttfamily
-  }
+% \sisetup
+  % {
+    % math-rm=\mathtt,
+    % text-rm=\ttfamily
+  % }
 
-
-%%% Номера страниц по центру вверху
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\lhead{\normalsize\chaptername\xspace\thesection}
-\chead{\normalsize\thepage}
-\rhead{}
-\lfoot{}
-\cfoot{}
-\rfoot{}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0pt}
 
 %%% Выравнивание и переносы %%%
 \sloppy					% Избавляемся от переполнений
@@ -52,7 +36,6 @@
 
 %%% Библиография %%%
 \makeatletter
-% \bibliographystyle{utf8gost705u}	% Оформляем библиографию в соответствии с ГОСТ 7.0.5
 \renewcommand{\@biblabel}[1]{#1.}	% Заменяем библиографию с квадратных скобок на точку:
 \makeatother
 
@@ -64,22 +47,16 @@
 \definecolor{linkcolor}{rgb}{0.9,0,0}
 \definecolor{citecolor}{rgb}{0,0.6,0}
 \definecolor{urlcolor}{rgb}{0,0,1}
-\hypersetup{
-    colorlinks=false
-}
-
-%%% Оглавление %%%
-\renewcommand{\cftchapdotsep}{\cftdotsep}
-
+% \hypersetup{
+    % colorlinks=false
+% }
 
 
 
 %%% Доп. команды %%%
 \providecommand{\setfont}[2]{{\fontfamily{#1}\selectfont #2}}
 
-\providecommand\udk{524.827\xspace}
 \providecommand{\alm}{a_{\ell m}}
-% \providecommand{\mean}[1]{\left\langle #1\right\rangle}
 \providecommand{\Tq}{T(\vec{q})}
 \providecommand{\pvec}[1]{\vec{#1}\mum{}ern2mu\vphantom{#1}}
 
@@ -114,9 +91,8 @@
 \providecommand{\mum}[1]{\SI{#1}{\micro m}}
 \providecommand{\mpc}[1]{\SI{#1}{\mega\pc}}
 
-\DeclareSIUnit\jansky{Jy}
-\DeclareSIUnit\pc{pc}
-
+% \DeclareSIUnit\jansky{Jy}
+% \DeclareSIUnit\pc{pc}
 
 
 \newtheorem{mydef}{Определение}
@@ -124,8 +100,6 @@
 \DeclarePairedDelimiter\brackets{\lbrack}{\rbrack}
 \DeclarePairedDelimiter\mean{\langle}{\rangle}
 \DeclareMathOperator{\D}{d}
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%

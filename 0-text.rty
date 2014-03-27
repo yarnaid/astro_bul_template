@@ -1,4 +1,8 @@
 \input maik.rty
 \input sao_cmd
+\input{packages.tex}        % Подключаемые пакеты
+\input{styles.tex}          % Пользовательские стили
+\input{acro.tex}            % Акронимы
+
 %\def\refitem#1{\relax}
 \endinput
