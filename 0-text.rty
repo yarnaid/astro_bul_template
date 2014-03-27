@@ -1,6 +1,4 @@
-%
-% maiksamp.rty 29.11.2001
-%
 \input maik.rty
+\input sao_cmd
 %\def\refitem#1{\relax}
 \endinput
