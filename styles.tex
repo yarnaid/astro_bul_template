@@ -1,0 +1,181 @@
+% -*- root: dissertation.tex -*-
+%%% Макет страницы %%%
+\geometry{a4paper,top=2cm,bottom=2cm,left=2.5cm,right=1cm}
+\allsectionsfont{\centering}
+\titlespacing*{\chapter}{}{3\baselineskip}{3\baselineskip}
+
+%%% Кодировки и шрифты %%%
+\renewcommand{\rmdefault}{ftm} % Включаем Times New Roman
+% \renewcommand{\baselinestretch}{1.5}
+\usepackage[onehalfspacing]{setspace}% 1,5 интервал
+\usepackage[12pt]{extsizes}
+\setlength{\headheight}{15pt}
+
+
+ \acsetup{
+ list-type = table,
+ list-style = longtable,
+ list-heading = subsection*,
+ extra-style = comma,
+ page-ref = comma
+}
+
+%%%%%%%%%%%%%%%%%%%%%
+%%% invert colors %%%
+%%%%%%%%%%%%%%%%%%%%%
+%\pagecolor[rgb]{0.5,0.5,0.5}
+%\color[rgb]{1,1,1}
+
+\sisetup
+  {
+    math-rm=\mathtt,
+    text-rm=\ttfamily
+  }
+
+
+%%% Номера страниц по центру вверху
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\normalsize\chaptername\xspace\thesection}
+\chead{\normalsize\thepage}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%%% Выравнивание и переносы %%%
+\sloppy					% Избавляемся от переполнений
+\clubpenalty=10000		% Запрещаем разрыв страницы после первой строки абзаца
+\widowpenalty=10000		% Запрещаем разрыв страницы после последней строки абзаца
+
+%%% Библиография %%%
+\makeatletter
+% \bibliographystyle{utf8gost705u}	% Оформляем библиографию в соответствии с ГОСТ 7.0.5
+\renewcommand{\@biblabel}[1]{#1.}	% Заменяем библиографию с квадратных скобок на точку:
+\makeatother
+
+%%% Изображения %%%
+\graphicspath{ {images/} } % Пути к изображениям
+
+
+%%% Цвета гиперссылок %%%
+\definecolor{linkcolor}{rgb}{0.9,0,0}
+\definecolor{citecolor}{rgb}{0,0.6,0}
+\definecolor{urlcolor}{rgb}{0,0,1}
+\hypersetup{
+    colorlinks=false
+}
+
+%%% Оглавление %%%
+\renewcommand{\cftchapdotsep}{\cftdotsep}
+
+
+
+
+%%% Доп. команды %%%
+\providecommand{\setfont}[2]{{\fontfamily{#1}\selectfont #2}}
+
+\providecommand\udk{524.827\xspace}
+\providecommand{\alm}{a_{\ell m}}
+% \providecommand{\mean}[1]{\left\langle #1\right\rangle}
+\providecommand{\Tq}{T(\vec{q})}
+\providecommand{\pvec}[1]{\vec{#1}\mum{}ern2mu\vphantom{#1}}
+
+
+\providecommand{\cmbfast}{\texttt{CMBFAST}\xspace}
+\providecommand{\planck}{Planck\xspace}
+\providecommand{\Q}{\textsf{Q}\xspace}
+\providecommand{\V}{\textsf{V}\xspace}
+\providecommand{\W}{\textsf{W}\xspace}
+\providecommand{\K}{\textsf{K}\xspace}
+\providecommand{\Red}{\color{red}}
+\providecommand{\todo}[1]{\textit{\huge \Red #1}}
+\providecommand{\noref}{\todo{ПОИСКАТЬ ССЫЛКУ}}
+\providecommand{\clmap}{\texttt{cl2map}\xspace}
+\providecommand{\skyview}{\texttt{SkyView}\xspace}
+\providecommand{\healpix}{\texttt{HEALPix}\xspace}
+\providecommand{\python}{\texttt{python}\xspace}
+\providecommand{\django}{\texttt{Django}\xspace}
+\providecommand{\degr}{$\degree$}
+\providecommand{\fdg}{\mathrlap{.}{\degree}}
+\providecommand{\fm}{\mathrlap{.}{^m}}
+\providecommand{\Kz}{$K(\mathbf{n}, \omega, z, \ell)$\xspace}
+\providecommand{\z}{$z$\xspace}
+\providecommand{\Alm}{\texttt{Alm}\xspace}
+\providecommand{\Cl}{\texttt{Cl}\xspace}
+\providecommand{\pointS}{\texttt{PointSource}\xspace}
+\providecommand{\pixelmap}{\texttt{PixelMap}\xspace}
+\providecommand{\ghz}[1]{\SI{#1}{\GHz}\xspace}
+\providecommand{\jy}[1]{\SI{#1}{\jansky}}
+\providecommand{\vs}{\texttt{vs}\xspace}
+\providecommand{\amin}[1]{\SI{#1}{\arcmin}}
+\providecommand{\mum}[1]{\SI{#1}{\micro m}}
+\providecommand{\mpc}[1]{\SI{#1}{\mega\pc}}
+
+\DeclareSIUnit\jansky{Jy}
+\DeclareSIUnit\pc{pc}
+
+
+
+\newtheorem{mydef}{Определение}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\brackets{\lbrack}{\rbrack}
+\DeclarePairedDelimiter\mean{\langle}{\rangle}
+\DeclareMathOperator{\D}{d}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%% SHADOWS & STYLES %%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{spart_bot}{rgb}{.9,.8,.0}
+\definecolor{spart_top}{rgb}{.99,.99,.4}
+
+\definecolor{part_bot}{rgb}{0.3,0.7,0.3}
+\definecolor{part_top}{rgb}{0.5,1.5,0.5}
+
+\tikzset{
+    subpart/.style={
+        ellipse,
+        top color=spart_top,
+        bottom color=spart_bot,
+        font={
+            \itshape
+            \ttfamily
+        },
+    },
+    shadow_st/.style={
+        fill=black!50,
+        rounded corners=1mm,
+    },
+    part/.style={
+        rectangle,
+        rounded corners=3mm,
+        top color=part_top,
+        bottom color=part_bot,
+        font={
+            \large
+            \ttfamily
+            },
+    },
+    pic_shadow/.style={
+        shadow blur extra rounding=3.3pt,
+        shadow xshift=.2em,
+        shadow yshift=-.2em,
+        shadow blur steps=10,
+    },
+}
+
+\tikzfading[name=fade out, inner color=transparent!0,
+  outer color=transparent!100]
+
+\providecommand{\mypic}[2]% file name, args
+{   \begin{tikzpicture}
+        \node[blur shadow=pic_shadow] {\includegraphics[#1]{#2}};
+    \end{tikzpicture}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%
